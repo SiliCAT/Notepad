@@ -1,0 +1,28 @@
+---
+layout: "post"
+title: "测试，继续测试"
+date: "2016-09-16 14:37"
+---
+
+能出来么？
+
+```
+{% raw %}
+{% raw %}
+    {{ 变量 }}
+{% endraw %}
+{% endraw %}
+```
+
+
+```
+{% raw %}
+{% raw %}
+{% endraw %}
+{% raw %}
+    {{ 变量 }}
+{% endraw %}
+{% raw %}
+{% endraw %}
+{% endraw %}
+```
