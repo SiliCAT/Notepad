@@ -1,3 +1,5 @@
+---
+---
 /* tools */
 .cf:before,
 .cf:after {
@@ -160,7 +162,7 @@ main, .notepad-share-icons, .notepad-disqus {
 .notepad-site-head .notepad-site-head-content {
   width: 100%;
   text-align: center;
-  background-image:  url({{ site.url }}/images/face.jpg); 
+  background-image:  url({{ site.url }}/images/face.jpg);
   background-size: cover; }
   .notepad-site-head .notepad-site-head-content .notepad-site-head-bg {
   }
