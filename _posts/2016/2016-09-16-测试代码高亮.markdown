@@ -1,0 +1,15 @@
+---
+layout: "post"
+title: "测试代码高亮"
+date: "2016-09-16 17:30"
+---
+
+试试看试试看试试看
+
+{% highlight java %}
+public class HelloWorld {
+    public static void main(String args[]) {
+      System.out.println("Hello World!");
+    }
+}
+{% endhighlight %}
