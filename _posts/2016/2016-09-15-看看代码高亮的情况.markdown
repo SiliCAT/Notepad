@@ -1,0 +1,14 @@
+---
+layout: "post"
+title: "看看代码高亮的情况"
+date: "2016-09-15 23:44"
+---
+
+
+下面是代码
+
+{% highlight php %}  
+<?php
+    echo "hello world";
+?>
+{% endhighlight %}  
