@@ -12,3 +12,11 @@ date: "2016-09-15 23:44"
     echo "hello world";
 ?>
 {% endhighlight %}  
+
+再来
+
+{% highlight ruby linenos %}
+def foo
+  puts 'foo'
+end
+{% endhighlight %}
