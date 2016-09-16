@@ -1,0 +1,9 @@
+---
+layout: "post"
+title: "讲真，安装Jekyll是个什么鬼？"
+date: "2016-09-16 10:15"
+---
+
+Github博客完全用不上啊。
+
+Windows平台写作工具：Atom ＋ Github Desktop，足矣。一切都搞定，安装时连系统管理员账户都不用。
