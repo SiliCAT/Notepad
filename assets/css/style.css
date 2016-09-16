@@ -163,7 +163,7 @@ main, .notepad-share-icons, .notepad-disqus {
   width: 100%;
   background-image:  url({{ site.url }}/images/face.jpg);
   background-repeat: no-repeat;
-  background-size: auto 50%;
+  background-size: auto 75%;
   background-position: bottom right; }
   .notepad-site-head .notepad-site-head-content .notepad-site-head-bg {
   }
