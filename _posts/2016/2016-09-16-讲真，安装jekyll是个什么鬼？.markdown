@@ -15,6 +15,8 @@ CSS样式表文件头加上
     ---
     ---
 
-其中的`{{ "{{ 元标识 " }}}}`就可以被Github的Jekyll渲染到了。
+其中的`{{ "{{ 模版变量 " }}}}`就可以被Github的Jekyll渲染到了。
 
-这里又是一个Github Markdown的文本转义技巧。
+上面又引入了一个Github Markdown的文本转义技巧。
+
+在Markdown普通文本中，需要转义double curly braces时，可以使用`\\{\\{  \\}\\}`的形式。
