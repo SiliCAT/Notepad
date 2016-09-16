@@ -36,3 +36,16 @@ CSS样式表文件头前面加上
 {% endraw %}
 {% endraw %}
 ```
+
+
+```
+{% raw %}
+{% raw %}
+{% endraw %}
+{% raw %}
+    {{ 变量 }}
+{% endraw %}
+{% raw %}
+{% endraw %}
+{% endraw %}
+```
