@@ -569,7 +569,7 @@ p code {
   color: MidnightBlue;
   border: 1px solid Wheat;
   border-radius: 5px;
-  line-height: 1.125;
+  line-height: 1.25rem;
   margin: 0 3px; }
 
 iframe {
