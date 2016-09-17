@@ -534,7 +534,7 @@ pre {
   word-wrap: break-word;
   font: inherit; }
 
-pre.lineno {
+td pre.lineno {
   border-right: 1px solid black;
   padding-right: 0.75rem;
   margin-right: 0.75rem; }
