@@ -538,6 +538,7 @@ pre table, pre table tbody, pre table tr, pre table tr td, pre table td {
   border: 0;
   padding: 0;
   margin: 0;
+  font-size: inherit;
   line-height: inherit; }
 
 code {
