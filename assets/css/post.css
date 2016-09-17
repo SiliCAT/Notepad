@@ -534,6 +534,10 @@ pre {
   word-wrap: break-word;
   font: inherit; }
 
+pre.lineno {
+  border-right: 1px solid black;
+  padding-right: 0.75rem; }
+
 pre table, pre table tbody, pre table tr, pre table tr td, pre table td {
   margin: 0;
   border: 0;
@@ -544,7 +548,7 @@ pre table, pre table tbody, pre table tr, pre table tr td, pre table td {
 
 code {
   font-size: 0.9375rem;
-  line-height: 1.2;
+  line-height: 1.25;
   display: block;
   border: 1px solid black;
   padding: 1.25rem 2.75rem; }
