@@ -535,11 +535,13 @@ pre {
   font: inherit;
   background-color: WhiteSmoke;
   border: 1px solid darkgrey;
-  padding: 1.25rem 2.75rem; }
+  padding: 1.25rem 2.75rem;
+  margin-bottom: 2em; }
 
 td pre {
   border: 0;
-  padding: 0; 
+  padding: 0;
+  margin: 0;
 }
 
   pre.lineno {
