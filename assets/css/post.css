@@ -564,6 +564,11 @@ code {
   font-size: 0.9375rem;
   line-height: 1.2; }
 
+p code {
+  background-color: LightSkyBlue;
+  color: DarkOrange;
+  border: 1px, solid, BlanchedAlmond; }
+
 iframe {
   border: 0; }
 
