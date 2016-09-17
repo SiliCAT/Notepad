@@ -560,6 +560,7 @@ code {
   padding: 1.25rem 2.75rem; }
 
 p code {
+  display: inline;
   background-color: BlanchedAlmond;
   color: MidnightBlue;
   border: 1px solid Wheat;
