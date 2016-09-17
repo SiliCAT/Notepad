@@ -536,7 +536,8 @@ pre {
 
 pre.lineno {
   border-right: 1px solid black;
-  padding-right: 0.75rem; }
+  padding-right: 0.75rem;
+  margin-right: 0.75rem; }
 
 pre table, pre table tbody, pre table tr, pre table tr td, pre table td {
   margin: 0;
