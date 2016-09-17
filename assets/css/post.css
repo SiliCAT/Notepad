@@ -565,9 +565,9 @@ code {
   line-height: 1.2; }
 
 p code {
-  background-color: LightSkyBlue;
-  color: DarkOrange;
-  border: 1px, solid, BlanchedAlmond; }
+  background-color: BlanchedAlmond;
+  color: MidnightBlue;
+  border: 1px, solid, Wheat; }
 
 iframe {
   border: 0; }
