@@ -568,8 +568,9 @@ p code {
   background-color: BlanchedAlmond;
   color: MidnightBlue;
   border: 1px solid Wheat;
+  border-radius: 5px;
   padding: 2px;
-  margin: 0 3px;}
+  margin: 0 3px; }
 
 iframe {
   border: 0; }
