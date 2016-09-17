@@ -534,10 +534,10 @@ pre {
   word-wrap: break-word;
   font: inherit; }
 
-figure.highlight code table tbody tr td pre.lineno {
+pre.lineno {
   border-right: 1px solid black;
   padding-right: 0.75rem;
-  margin-right: 0.75rem; }
+  margin-right: 0.75rem !important; }
 
 pre table, pre table tbody, pre table tr, pre table tr td, pre table td {
   margin: 0;
