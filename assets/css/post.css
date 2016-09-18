@@ -539,7 +539,8 @@ td pre {
   font-size: inherit;
   margin-bottom: 0; }
 
-pre.lineno {
+.highlight pre.lineno {
+  color: SlateGray;
   border-right: 1px solid grey;
   padding-right: 0.75rem; }
 
