@@ -532,9 +532,12 @@ html, body, .notepad-post-container, .notepad-post-header {
 
 pre {
   word-wrap: break-word;
-  font: inherit;
   font-size: 1.125rem;
   margin-bottom: 2em;  }
+
+td pre {
+  font-size: inherit;
+  margin-bottom: 0; }
 
 pre.lineno {
   border-right: 1px solid grey;
