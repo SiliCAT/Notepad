@@ -35,7 +35,7 @@ mtd2: 02000000 00020000 "rootfs"
 mtd3: 0db00000 00020000 "data"
 ```
 
-If you don't have /etc/fw_env.config file in your system then go ahead and create this file with the above content. MTD parts are not importan for booting and it can be adjusted later. For users who like to keep the stock mtd definition, there is no need to adjust it to the above definition. As long as mtd0 is defined as 1MB (0x 00100000) or greater then it will be OK:
+ MTD parts are not importan for booting and it can be adjusted later. For users who like to keep the stock mtd definition, there is no need to adjust it to the above definition. As long as mtd0 is defined as 1MB (0x 00100000) or greater then it will be OK:
 
 ```
 mtd0: 00100000 00020000 "u-boot"
@@ -65,9 +65,32 @@ or
 /usr/local/cloudengines/bin/blparam >  current_envs.txt
 ```
 
-三、准备工具并校验镜像
+三、一些小的检查
 
-四、刷写uBoot
+1
+uBoot envs config must be defined as followed in your /etc/fw_env.config
+
+```
+cat /etc/fw_env.config
+
+ # MTD device name	Device offset	Env. size	Flash sector size	Number of sectors
+/dev/mtd0 0xc0000 0x20000 0x20000
+```
+
+If you don't have /etc/fw_env.config file in your system then go ahead and create this file with the above content.
+
+
+2
+
+Make sure ethaddr is set in uBoot env. It must be set before rebooting the system. However, if you plan to flash the default envs image in step 8 (Flashing default u-boot envs image), then no need to worry about it now. It can be set after you've booted in to Linux. The MAC address will be set to a valid randomly generated local address.
+
+```
+fw_printenv ethaddr
+```
+
+四、准备工具并校验镜像
+
+五、刷写uBoot
 
 Erase mtd0
 
@@ -124,7 +147,7 @@ Expected output:
 Writing data to block 6 at offset 0xc0000
 ```
 
-五、配置环境变量
+六、配置环境变量
 
 for Pogo V4/Mobile:
 
@@ -148,6 +171,26 @@ Find your box DTB file in the rootfs /boot/dts directory and adjust the env to i
 fw_setenv dtb_file '/boot/dts/kirkwood-dockstar.dtb'
 ```
 
-六、设置netconsole
+For sanity check, print out uBoot envs to see if they look OK.
 
-七、设置引导次序
+```
+fw_printenv
+```
+
+and then double check the ethaddr env again to be sure. Don't reboot if there is error while listing U-Boot envs.
+
+七、设置netconsole
+
+Set up netconsole. It's important to set up neconsole if you don't already have serial console connected. If you've flashed the default environments in step 8 then activate netconsole with the following envs:
+
+```
+fw_setenv preboot_nc 'setenv nc_ready 0; for pingstat in 1 2 3 4 5; do; sleep 1; if run if_netconsole; then setenv nc_ready 1; fi; done; if test $nc_ready -eq 1; then run start_netconsole; fi'
+fw_setenv preboot 'run preboot_nc'
+fw_setenv ipaddr    '192.168.0.xxx'
+fw_setenv serverip '192.168.0.yyy'
+```
+
+where the 192.168.0.xxx is this plug IP address, and 192.168.0.yyy is the IP address of the netconsole server where it will monitor the output from the this plug (adjust them to the real values in your own local network settings).
+
+
+八、设置引导次序
