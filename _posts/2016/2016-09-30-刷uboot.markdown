@@ -62,3 +62,36 @@ or
 ```
 
 三、准备工具并校验镜像
+
+四、刷写uBoot
+
+2 刷缺省环境变量
+
+Flash u-boot envs to NAND location 0xC0000.
+
+Be extra careful with the next 2 commands, you should see output that look like below. If there is error, then do not reboot, post your problem here so we can help.
+
+```
+/usr/sbin/flash_erase /dev/mtd0 0xc0000 1
+```
+Expected output:
+
+```
+Erase Total 1 Units
+Performing Flash Erase of length 131072 at offset 0xc0000 done
+```
+
+```
+/usr/sbin/nandwrite -s 786432 /dev/mtd0 uboot.2016.05-tld-1.environment.img
+```
+Expected output:
+
+```
+Writing data to block 6 at offset 0xc0000
+```
+
+五、修改环境变量
+
+六、配置netconsole
+
+七、设置引导次序
