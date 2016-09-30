@@ -69,6 +69,36 @@ or
 
 四、刷写uBoot
 
+Erase mtd0
+
+```
+flash_erase /dev/mtd0 0 4
+```
+
+Expected output:
+
+```
+Erase Total 4 Units
+Performing Flash Erase of length 131072 at offset 0x60000 done
+```
+
+Write image to NAND
+
+Among the nandwrite commands below, be extra careful and execute only one nandwrite command corresponding to your platform that you are installing to, using the kwb file that you have extracted in step 5. Please double check to make sure the file is for the correct platform. Especially the similar sounding names (e.g. nsa310s and nsa310 are different u-boots).
+
+```
+nandwrite /dev/mtd0 uboot.2016.05-tld-1.pogo_v4.mtd0.kwb
+```
+
+Expected output:
+
+```
+Writing data to block 0 at offset 0x0
+Writing data to block 1 at offset 0x20000
+Writing data to block 2 at offset 0x40000
+Writing data to block 3 at offset 0x60000
+```
+
 2 刷缺省环境变量
 
 Flash u-boot envs to NAND location 0xC0000.
@@ -94,7 +124,7 @@ Expected output:
 Writing data to block 6 at offset 0xc0000
 ```
 
-五、修改环境变量
+五、配置环境变量
 
 for Pogo V4/Mobile:
 
@@ -118,6 +148,6 @@ Find your box DTB file in the rootfs /boot/dts directory and adjust the env to i
 fw_setenv dtb_file '/boot/dts/kirkwood-dockstar.dtb'
 ```
 
-六、配置netconsole
+六、设置netconsole
 
 七、设置引导次序
