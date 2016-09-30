@@ -4,7 +4,9 @@ title: "Pogoplug V4刷uboot"
 date: "2016-09-30 13:09"
 ---
 
-一、检查是否可刷
+一、 检查是否可刷
+
+1 检查坏道
 
 Be sure there is no bad block in the first 1M of your NAND (check dmesg). This is very important, if there is bad block in the first 1M (8 blocks), don't flash u-boot, because you will almost certainly brick your box. Please post your question here (there is a work around for it).
 
@@ -18,3 +20,40 @@ dmesg | grep -i 'bad'
 ```
 
 This bad block is the 4th block which resides within mtd0 (block 0 to block 7). So u-boot should not be flashed.
+
+2 检查分区信息
+
+And your mtd partitions should be:
+```
+cat /proc/mtd
+
+dev: size erasesize name
+mtd0: 00100000 00020000 "u-boot"
+mtd1: 00400000 00020000 "uImage"
+mtd2: 02000000 00020000 "rootfs"
+mtd3: 0db00000 00020000 "data"
+```
+
+If you don't have /etc/fw_env.config file in your system then go ahead and create this file with the above content. MTD parts are not importan for booting and it can be adjusted later. For users who like to keep the stock mtd definition, there is no need to adjust it to the above definition. As long as mtd0 is defined as 1MB (0x 00100000) or greater then it will be OK:
+```
+mtd0: 00100000 00020000 "u-boot"
+```
+
+二、 备份当前uBoot以及环境变量
+
+Be sure to save your current uBoot image in mtd0, or have a backup image saved somewhere as precaution. And save your current u-boot envs with fw_printenv, or just copy/paste the listing into a text file. Note the nanddump command below allows future restoration to the same box you're backing up, and also can be used to restore a differrent box's mtd0 if needed.
+
+Dumping NAND mtd0:
+```
+nanddump --noecc --omitoob -l 0x80000 -f mtd0 /dev/mtd0
+```
+Save envs (stock OS might not have fw_printenv, so try blparam):
+```
+fw_printenv > current_envs.txt
+```
+or
+```
+/usr/local/cloudengines/bin/blparam >  current_envs.txt
+```
+
+三、
