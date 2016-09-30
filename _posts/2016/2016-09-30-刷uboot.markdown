@@ -98,8 +98,8 @@ ln -s fw_printenv fw_setenv
 cp -a fw_env.config /etc/
 
 echo "2e70f13030952f5b713ae00230f37239  uboot.2016.05-tld-1.pogo_v4.mtd0.kwb" | md5sum -c
+echo "e4d3c14175319d206cfefb2a624f00a7  uboot.2016.05-tld-1.environment.img" | md5sum -c
 ```
-
 
 
 五、刷写uBoot
