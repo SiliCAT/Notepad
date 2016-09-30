@@ -50,6 +50,10 @@ Dumping NAND mtd0:
 ```
 nanddump --noecc --omitoob -l 0x80000 -f mtd0 /dev/mtd0
 ```
+
+2 备份环境变量
+Save current envs with fw_printenv, or just copy/paste the listing into a text file.
+
 Save envs (stock OS might not have fw_printenv, so try blparam):
 
 ```
@@ -91,6 +95,28 @@ Writing data to block 6 at offset 0xc0000
 ```
 
 五、修改环境变量
+
+for Pogo V4/Mobile:
+
+```
+fw_setenv arcNumber 3960
+fw_setenv machid f78
+```
+
+Then for all boxes, restore these 2 envs using the saved envs text in step c (replace xxx with the real saved values)
+
+```
+fw_setenv mtdparts 'xxxxxxxxx'
+fw_setenv ethaddr 'xx:xx:xx:xx:xx:xx'
+```
+
+Adjust the DTB name to boot with a rootfs that has FDT kernel (this is the normal case):
+
+Find your box DTB file in the rootfs /boot/dts directory and adjust the env to it. For example, if the box is the Dockstar
+
+```
+fw_setenv dtb_file '/boot/dts/kirkwood-dockstar.dtb'
+```
 
 六、配置netconsole
 
