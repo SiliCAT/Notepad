@@ -202,6 +202,9 @@ fw_setenv ipaddr    '192.168.0.xxx'
 fw_setenv serverip '192.168.0.yyy'
 ```
 
+
+
+
 where the 192.168.0.xxx is this plug IP address, and 192.168.0.yyy is the IP address of the netconsole server where it will monitor the output from the this plug (adjust them to the real values in your own local network settings).
 
 
