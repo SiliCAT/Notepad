@@ -23,7 +23,7 @@ This bad block is the 4th block which resides within mtd0 (block 0 to block 7). 
 
 2 检查分区信息
 
-And your mtd partitions should be:
+And your mtd partitions should be:  
 ```
 cat /proc/mtd
 
@@ -34,7 +34,7 @@ mtd2: 02000000 00020000 "rootfs"
 mtd3: 0db00000 00020000 "data"
 ```
 
-If you don't have /etc/fw_env.config file in your system then go ahead and create this file with the above content. MTD parts are not importan for booting and it can be adjusted later. For users who like to keep the stock mtd definition, there is no need to adjust it to the above definition. As long as mtd0 is defined as 1MB (0x 00100000) or greater then it will be OK:
+If you don't have /etc/fw_env.config file in your system then go ahead and create this file with the above content. MTD parts are not importan for booting and it can be adjusted later. For users who like to keep the stock mtd definition, there is no need to adjust it to the above definition. As long as mtd0 is defined as 1MB (0x 00100000) or greater then it will be OK:  
 ```
 mtd0: 00100000 00020000 "u-boot"
 ```
@@ -43,17 +43,17 @@ mtd0: 00100000 00020000 "u-boot"
 
 Be sure to save your current uBoot image in mtd0, or have a backup image saved somewhere as precaution. And save your current u-boot envs with fw_printenv, or just copy/paste the listing into a text file. Note the nanddump command below allows future restoration to the same box you're backing up, and also can be used to restore a differrent box's mtd0 if needed.
 
-Dumping NAND mtd0:
+Dumping NAND mtd0:  
 ```
 nanddump --noecc --omitoob -l 0x80000 -f mtd0 /dev/mtd0
 ```
-Save envs (stock OS might not have fw_printenv, so try blparam):
+Save envs (stock OS might not have fw_printenv, so try blparam):  
 ```
 fw_printenv > current_envs.txt
 ```
-or
+or  
 ```
 /usr/local/cloudengines/bin/blparam >  current_envs.txt
 ```
 
-三、
+三、准备工具并校验镜像
