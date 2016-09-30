@@ -90,6 +90,12 @@ fw_printenv ethaddr
 
 四、准备工具并校验镜像
 
+cd /tmp
+wget http://jsch.pcriot.com/uboot/uboot.2016.05-tld-1.pogo_v4.bodhi.tar.gz
+tar xzvf uboot.2016.05-tld-1.pogo_v4.bodhi.tar.gz
+
+
+
 五、刷写uBoot
 
 Erase mtd0
