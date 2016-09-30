@@ -23,7 +23,8 @@ This bad block is the 4th block which resides within mtd0 (block 0 to block 7). 
 
 2 检查分区信息
 
-And your mtd partitions should be:  
+And your mtd partitions should be:
+
 ```
 cat /proc/mtd
 
