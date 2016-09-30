@@ -1,0 +1,20 @@
+---
+layout: "post"
+title: "Pogoplug V4刷uboot"
+date: "2016-09-30 13:09"
+---
+
+一、检查是否可刷
+
+Be sure there is no bad block in the first 1M of your NAND (check dmesg). This is very important, if there is bad block in the first 1M (8 blocks), don't flash u-boot, because you will almost certainly brick your box. Please post your question here (there is a work around for it).
+
+Example of bad block in mtd0:
+
+```
+dmesg | grep -i 'bad'
+
+[    2.413231] Scanning device for bad blocks
+[    2.417731] Bad eraseblock 3 at 0x000000060000
+```
+
+This bad block is the 4th block which resides within mtd0 (block 0 to block 7). So u-boot should not be flashed.
