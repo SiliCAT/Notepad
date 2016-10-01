@@ -180,7 +180,7 @@ Adjust the DTB name to boot with a rootfs that has FDT kernel (this is the norma
 Find your box DTB file in the rootfs /boot/dts directory and adjust the env to it. For example, if the box is the Dockstar
 
 ```
-fw_setenv dtb_file '/boot/dts/kirkwood-dockstar.dtb'
+fw_setenv dtb_file '/boot/dts/kirkwood-pogoplug_v4.dtb'
 ```
 
 For sanity check, print out uBoot envs to see if they look OK.
